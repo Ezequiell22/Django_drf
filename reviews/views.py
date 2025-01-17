@@ -4,6 +4,7 @@ from reviews.serializers import ReviewSerializer
 from rest_framework.permissions import IsAuthenticated
 from core.permissions import GlobalDefaultPermission
 
+
 class ReviewCreateListView(generics.ListCreateAPIView):
   permission_classes = (IsAuthenticated,GlobalDefaultPermission,)
   queryset = Review.objects.all()

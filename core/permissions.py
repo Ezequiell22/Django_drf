@@ -1,5 +1,6 @@
 from rest_framework import permissions
 
+
 class GlobalDefaultPermission(permissions.BasePermission):
   def has_permission(self, request, view):
     app_permission_model = self.get_app_permission_model(
