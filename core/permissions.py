@@ -24,12 +24,12 @@ class GlobalDefaultPermission(permissions.BasePermission):
   
   def get_action_sufix(self, method):
     method_actions = {
-      'GET' : 'view',
-      'POST' : 'add',
-      'PUT' : 'change',
-      'PATCH' : 'change',
-      'DELETE' : 'delete',
-      'OPTIONS' : 'view',
-      'HEAD' : 'view'
+      'GET': 'view',
+      'POST': 'add',
+      'PUT': 'change',
+      'PATCH': 'change',
+      'DELETE': 'delete',
+      'OPTIONS': 'view',
+      'HEAD': 'view'
     }
     return method_actions.get(method, '')

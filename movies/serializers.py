@@ -14,11 +14,11 @@ class MovieModelSerializer(serializers.ModelSerializer):
     # movie . related_name in table review >> reviews.models
     rate = obj.reviews.aggregate(Avg('stars'))['stars__avg']
     if rate:
-      return round(rate,2)
+      return round(rate, 2)
 
     return None
 
-  #validate_ + name of field
+  # validate_ + name of field
   def validate_release_date(self, value):
     if value.year < 1990:
       raise serializers.ValidationError('Data too old')
